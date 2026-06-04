@@ -1,3 +1,6 @@
 spring:
   application:
     name: itauJava10x
+
+estatistica:
+  segundos: 60

@@ -1,6 +1,5 @@
-package dev.java10x.itauJava10x;
+package dev.java10x.itauJava10x.estatistica;
 
-import dev.java10x.Transacao;
 import lombok.Getter;
 
 @Getter
