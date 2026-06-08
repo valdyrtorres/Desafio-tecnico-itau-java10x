@@ -1,4 +1,4 @@
-package dev.java10x.itauJava10x;
+package dev.java10x.itauJava10x.transacoes;
 
 import dev.java10x.itauJava10x.estatistica.EstatisticaDTO;
 import org.springframework.stereotype.Repository;

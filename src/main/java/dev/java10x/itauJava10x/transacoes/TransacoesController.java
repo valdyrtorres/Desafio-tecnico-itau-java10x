@@ -1,5 +1,6 @@
-package dev.java10x.itauJava10x;
+package dev.java10x.itauJava10x.transacoes;
 
+import dev.java10x.itauJava10x.docs.TransacaoControllerDoc;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -12,9 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @Slf4j
 @RestController
 @RequestMapping("/transacao")
-@Tag(name="Transações",
-description = "Endpoints responsaveis por criar e adicionar as transacoes em uma lista assim como limpa-la")
-public class TransacoesController {
+public class TransacoesController implements TransacaoControllerDoc {
 
     // injetar
     @Autowired // autowired está deprecated
@@ -23,21 +22,6 @@ public class TransacoesController {
     private TransacaoRepository transacaoRepository;
 
     @PostMapping
-    @Operation(summary="Cria Transacao",
-        description="Recebe uma transacao valida e adiciona em uma lista"
-    )
-    @ApiResponse(
-            responseCode="201",
-            description="Transacao criada com sucesso"
-    )
-    @ApiResponse(
-            responseCode="422",
-            description="Erro de validacao capturado"
-    )
-    @ApiResponse(
-            responseCode="400",
-            description="Erro inesperado no servidor"
-    )
     public ResponseEntity adicionar(@RequestBody TransacaoRequest transacaoRequest) {
         log.info("Enviando requisicao de transacao para o servidor: ");
 
