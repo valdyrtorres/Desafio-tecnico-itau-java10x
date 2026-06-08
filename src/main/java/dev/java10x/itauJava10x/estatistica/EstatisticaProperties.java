@@ -1,10 +1,17 @@
 package dev.java10x.itauJava10x.estatistica;
 
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
+import org.springframework.validation.annotation.Validated;
 
-//@Component
+@Validated
 @ConfigurationProperties(prefix = "estatistica")
-public record EstatisticaProperties(Integer segundos) {
+public record EstatisticaProperties(
+    // NAO PODE SER 0 OU NUMERO NEGATIVO E TAMBEM NAO PODE SER VAZIO
+    @NotNull
+    @Positive
+    Integer segundos
+) {
 
 }
